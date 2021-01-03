@@ -1,6 +1,14 @@
-import {Router} from 'express';
+import { Request, Response, Router } from 'express'
+import jwt from 'jsonwebtoken'
+import currentUser from '../middlewares/current_user'
+import requireAuth from '../middlewares/require_auth'
 const currentUserRouter = Router()
-currentUserRouter.get("/api/users/currentuser",(req,res)=>{
-  return res.send("Hi there!")
-})
-export default currentUserRouter;
+currentUserRouter.get(
+  '/api/users/currentuser',
+  currentUser,
+  requireAuth,
+  async (req: Request, res: Response) => {
+    return res.json({ currentUser: req.currentUser ?? null })
+  },
+)
+export default currentUserRouter

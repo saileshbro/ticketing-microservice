@@ -2,11 +2,11 @@ import CustomError from './custom_error'
 
 export default class BadRequestError extends CustomError {
   statusCode = 400
-  constructor(public message: string) {
-    super(message)
+  constructor(public reason: string) {
+    super(reason)
     Object.setPrototypeOf(this, BadRequestError.prototype)
   }
   serializeErrors() {
-    return [{ message: this.message }]
+    return [{ message: this.reason }]
   }
 }

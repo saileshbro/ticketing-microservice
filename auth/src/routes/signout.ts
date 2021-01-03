@@ -1,6 +1,7 @@
-import {Router} from 'express';
+import { Request, Response, Router } from 'express'
 const signOutRoute = Router()
-signOutRoute.get("/api/users/signout",(req,res)=>{
-  return res.send("Hi there!")
+signOutRoute.post('/api/users/signout', (req: Request, res: Response) => {
+  req.session = null
+  return res.send({})
 })
 export default signOutRoute
