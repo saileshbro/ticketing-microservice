@@ -1,5 +1,4 @@
 import request from 'supertest'
-import { resolveProjectReferencePath } from 'typescript'
 import app from '../../app'
 it('fails when a email that does not exists is supplied', async () => {
   return request(app)

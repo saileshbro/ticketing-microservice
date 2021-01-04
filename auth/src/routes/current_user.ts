@@ -5,7 +5,6 @@ const currentUserRouter = Router()
 currentUserRouter.get(
   '/api/users/currentuser',
   currentUser,
-  requireAuth,
   async (req: Request, res: Response) => {
     return res.json({ currentUser: req.currentUser ?? null })
   },
