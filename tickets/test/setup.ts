@@ -1,7 +1,7 @@
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import request from 'supertest'
 import mongoose from 'mongoose'
-import app from '../app'
+import app from '../src/app'
 
 declare global {
   namespace NodeJS {
