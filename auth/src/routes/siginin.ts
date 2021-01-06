@@ -1,8 +1,7 @@
+import { BadRequestError, validateRequests } from '@saileshbrotickets/common'
 import { Request, Response, Router } from 'express'
 import { body } from 'express-validator'
 import jwt from 'jsonwebtoken'
-import { BadRequestError } from '../errors'
-import validateRequest from '../middlewares/validate_requests'
 import User from '../models/User'
 import PasswordManager from '../services/password_manager'
 
@@ -11,7 +10,7 @@ signInRoute.post(
   '/api/users/signin',
   body('email').isEmail().withMessage('Email must be valid'),
   body('password').trim().notEmpty().withMessage('You must supply a password'),
-  validateRequest,
+  validateRequests,
   async (req: Request, res: Response) => {
     const { email, password } = req.body
     const user = await User.findOne({ email })

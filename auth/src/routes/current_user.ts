@@ -1,6 +1,5 @@
+import { currentUser } from '@saileshbrotickets/common'
 import { Request, Response, Router } from 'express'
-import currentUser from '../middlewares/current_user'
-import requireAuth from '../middlewares/require_auth'
 const currentUserRouter = Router()
 currentUserRouter.get(
   '/api/users/currentuser',

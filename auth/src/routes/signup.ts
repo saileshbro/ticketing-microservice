@@ -1,9 +1,8 @@
 import { Router, Request, Response, NextFunction } from 'express'
 import { body } from 'express-validator'
-import { BadRequestError } from '../errors'
 import User from '../models/User'
 import jwt from 'jsonwebtoken'
-import validateRequest from './../middlewares/validate_requests'
+import { BadRequestError, validateRequests } from '@saileshbrotickets/common'
 const signUpRoute = Router()
 signUpRoute.post(
   '/api/users/signup',
@@ -12,7 +11,7 @@ signUpRoute.post(
     .trim()
     .isLength({ min: 4, max: 20 })
     .withMessage('Password must be between 4 and 20 characters'),
-  validateRequest,
+  validateRequests,
   async (req: Request, res: Response, next: NextFunction) => {
     const { email, password } = req.body
     const existingUser = await User.findOne({ email })
