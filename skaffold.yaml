@@ -16,14 +16,6 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: saileshbro/client
-      context: client
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: "**/*.js"
-            dest: .
     - image: saileshbro/tickets
       context: tickets
       docker:
@@ -31,4 +23,20 @@ build:
       sync:
         manual:
           - src: "src/**/*.ts"
+            dest: .
+    - image: saileshbro/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: saileshbro/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "**/*.js"
             dest: .
