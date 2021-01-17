@@ -6,7 +6,9 @@ import {
 } from '@saileshbrotickets/common'
 import { Router, Request, Response } from 'express'
 import { body } from 'express-validator'
+import TicketUpdatedPublisher from '../events/publishers/ticket_updated_publisher'
 import Ticket from '../models/Ticket'
+import { natsWrapper } from '../nats_wrapper'
 const updateTicketRouter = Router()
 updateTicketRouter.put(
   '/api/tickets/:id',
@@ -25,6 +27,12 @@ updateTicketRouter.put(
     ticket.set({
       title: req.body.title,
       price: req.body.price,
+    })
+    new TicketUpdatedPublisher(natsWrapper.client).publish({
+      id: ticket.id,
+      price: ticket.price,
+      title: ticket.title,
+      userId: req.currentUser!.id,
     })
     await ticket.save()
     return res.send(ticket)

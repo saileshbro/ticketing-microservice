@@ -1,7 +1,9 @@
 import { requireAuth, validateRequests } from '@saileshbrotickets/common'
 import { Router, Request, Response } from 'express'
 import { body } from 'express-validator'
+import TicketCreatedPublisher from '../events/publishers/ticket_created_publisher'
 import Ticket from '../models/Ticket'
+import { natsWrapper } from '../nats_wrapper'
 
 const createTicketRouter = Router()
 createTicketRouter.post(
@@ -15,6 +17,12 @@ createTicketRouter.post(
 
     const ticket = Ticket.build({ title, price, userId: req.currentUser!.id })
     await ticket.save()
+    new TicketCreatedPublisher(natsWrapper.client).publish({
+      id: ticket.id,
+      price: ticket.price,
+      title: ticket.title,
+      userId: req.currentUser!.id,
+    })
     return res.status(201).json(ticket)
   },
 )

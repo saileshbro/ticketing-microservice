@@ -1,7 +1,7 @@
 import { Message } from 'node-nats-streaming'
-import Listener from './base_listener'
-import { Subjects } from './subjects'
-import { TicketCreatedEvent } from './ticket_created_event'
+import Listener from '../../../common/src/events/base_listener'
+import { Subjects } from '../../../common/src/events/subjects'
+import TicketCreatedEvent from '../../../common/src/events/ticket_created_event'
 
 export default class TicketCreatedListener extends Listener<TicketCreatedEvent> {
   queueGroupName: string = 'payments-services'

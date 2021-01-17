@@ -1,6 +1,7 @@
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose'
+import { JsxEmit } from 'typescript'
 
 declare global {
   namespace NodeJS {
@@ -9,6 +10,7 @@ declare global {
     }
   }
 }
+jest.mock('../src/nats_wrapper.ts')
 let mongo: MongoMemoryServer
 beforeAll(async () => {
   process.env.JWT_KEY = 'DSFKLDSAFKLDSAJFDKAS'
@@ -21,6 +23,7 @@ beforeAll(async () => {
 })
 
 beforeEach(async () => {
+  jest.clearAllMocks()
   const collections = await mongoose.connection.db.collections()
   for (const coll of collections) {
     await coll.deleteMany({})

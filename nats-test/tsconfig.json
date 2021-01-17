@@ -32,6 +32,10 @@
   ],
   "include": [
     "./src/**/*.tsx",
-    "./src/**/*.ts"
+    "./src/**/*.ts",
+    "../common/src/events/ticket_created_event.ts",
+    "../common/src/events/subjects.ts",
+    "../common/src/events/base_publisher.ts",
+    "../common/src/events/base_listener.ts"
   ]
 }
