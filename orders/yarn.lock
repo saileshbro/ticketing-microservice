@@ -465,10 +465,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@saileshbrotickets/common@latest":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@saileshbrotickets/common/-/common-1.0.13.tgz#3d6994b9faa243a4a559702adb2314e91f78d28c"
-  integrity sha512-VJNyvSUVUCq1jBb5Wj+QrYAyHVnQlW/UN/BdsPl4iGy/8VDJNFa+TRwJOfJLfa+DlGQkzv3P2RS0Ka51XXoimg==
+"@saileshbrotickets/common@1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@saileshbrotickets/common/-/common-1.0.15.tgz#3b38994615d8c29d0c7d902d703503a4b59c0f5c"
+  integrity sha512-jlpBQ9z18ydPHvWIbs1uqpGeJDtLK30OCHuxamHI0O7ZstwkfNz4TCQr+JhufRRjT1Ig+XOrx73jsSTeC36JXw==
   dependencies:
     "@types/cookie-session" "^2.0.42"
     "@types/express" "^4.17.9"
