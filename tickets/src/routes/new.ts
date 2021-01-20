@@ -22,6 +22,7 @@ createTicketRouter.post(
       price: ticket.price,
       title: ticket.title,
       userId: req.currentUser!.id,
+      version: ticket.version,
     })
     return res.status(201).json(ticket)
   },

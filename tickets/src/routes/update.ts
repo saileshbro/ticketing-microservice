@@ -28,13 +28,14 @@ updateTicketRouter.put(
       title: req.body.title,
       price: req.body.price,
     })
+    await ticket.save()
     new TicketUpdatedPublisher(natsWrapper.client).publish({
       id: ticket.id,
       price: ticket.price,
       title: ticket.title,
       userId: req.currentUser!.id,
+      version: ticket.version,
     })
-    await ticket.save()
     return res.send(ticket)
   },
 )

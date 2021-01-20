@@ -8,7 +8,9 @@ import {
 import { Router, Request, Response } from 'express'
 import { param } from 'express-validator'
 import { Types } from 'mongoose'
+import OrderCancelledPublisher from '../events/publishers/order_cancelled_publisher'
 import Order from '../models/Order'
+import { natsWrapper } from '../nats_wrapper'
 const deleteOrderRouter = Router()
 deleteOrderRouter.delete(
   '/api/orders/:orderId',
@@ -30,6 +32,13 @@ deleteOrderRouter.delete(
     order.status = OrderStatus.Cancelled
     await order.save()
     // publilsh an event saying this was cancelled!
+    new OrderCancelledPublisher(natsWrapper.client).publish({
+      id: order.id,
+      version: order.version,
+      ticket: {
+        id: order.ticket.id,
+      },
+    })
     return res.status(204).send(order)
   },
 )

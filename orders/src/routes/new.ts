@@ -9,8 +9,10 @@ import {
 import { Router, Request, Response } from 'express'
 import { body } from 'express-validator'
 import { Types } from 'mongoose'
+import OrderCreatedPublisher from '../events/publishers/order_created_publisher'
 import Order from '../models/Order'
 import Ticket from '../models/Ticket'
+import { natsWrapper } from '../nats_wrapper'
 
 const createOrderRouter = Router()
 const EXPIRATION_WINDOW_SECONDS = 15 * 60
@@ -47,6 +49,17 @@ createOrderRouter.post(
     // calculate an expiration date for this order
     // build the order and save the database
     // publish an event about order was created
+    new OrderCreatedPublisher(natsWrapper.client).publish({
+      id: order.id,
+      version: order.version,
+      status: order.status,
+      ticket: {
+        id: ticket.id,
+        price: ticket.price,
+      },
+      userId: order.userId,
+      expiresAt: order.expiresAt.toISOString(),
+    })
     return res.status(201).send(order)
   },
 )

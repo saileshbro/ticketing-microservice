@@ -1,3 +1,4 @@
+import { Types } from 'mongoose'
 import request from 'supertest'
 import app from '../../app'
 import Ticket from '../../models/Ticket'
@@ -5,6 +6,7 @@ const buildTicket = async () => {
   const ticket = Ticket.build({
     title: 'concet',
     price: 20,
+    id: new Types.ObjectId().toHexString(),
   })
   await ticket.save()
   return ticket
