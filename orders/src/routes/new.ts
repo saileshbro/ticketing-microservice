@@ -15,7 +15,7 @@ import Ticket from '../models/Ticket'
 import { natsWrapper } from '../nats_wrapper'
 
 const createOrderRouter = Router()
-const EXPIRATION_WINDOW_SECONDS = 15 * 60
+const EXPIRATION_WINDOW_SECONDS = 1 * 60
 createOrderRouter.post(
   '/api/orders',
   requireAuth,
