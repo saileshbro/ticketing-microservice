@@ -3,6 +3,7 @@ import { Types } from 'mongoose'
 import request from 'supertest'
 import app from '../../app'
 import Order from '../../models/Order'
+import Payment from '../../models/Payment'
 import stripe from '../../stripe'
 it('returns 404 when purchased order which doesnot exist', async () => {
   await request(app)
@@ -79,4 +80,9 @@ it('returns a 204 with valid inputs', async () => {
   expect(stripeCharge).toBeDefined()
   expect(stripeCharge!.currency).toEqual('usd')
   expect(stripeCharge!.amount).toEqual(price * 100)
+  const payment = await Payment.findOne({
+    orderId: order.id,
+    stripeId: stripeCharge!.id,
+  })
+  expect(payment).not.toBeNull()
 })
