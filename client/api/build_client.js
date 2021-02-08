@@ -7,6 +7,8 @@ const buildClient = ({ req }) => {
       headers: req.headers,
     })
   }
-  return axios.create()
+  return axios.create({
+    baseURL: '/',
+  })
 }
 export default buildClient

@@ -6,10 +6,10 @@ import axois from 'axios'
  */
 const useRequest = ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState(null)
-  const doRequest = async () => {
+  const doRequest = async (props = {}) => {
     try {
       setErrors(null)
-      const response = await axois[method](url, body)
+      const response = await axois[method](url, { ...body, ...props })
       if (onSuccess) {
         return onSuccess(response.data)
       }
