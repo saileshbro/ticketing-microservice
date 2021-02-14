@@ -51,11 +51,11 @@ ticketSchema.statics.build = (attrs: TicketAttrs) => {
     price: attrs.price,
   })
 }
-ticketSchema.statics.findByEvent = (event: {
+ticketSchema.statics.findByEvent = async (event: {
   id: string
   version: number
 }): Promise<TicketDoc | null> => {
-  return Ticket.findOne({
+  return await Ticket.findOne({
     _id: event.id,
     version: event.version - 1,
   })
