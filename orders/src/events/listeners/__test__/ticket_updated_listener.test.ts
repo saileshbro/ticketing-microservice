@@ -29,9 +29,9 @@ it('finds,updates, and saves a ticket', async () => {
   const { listener, data, message, ticket } = await setup()
   await listener.onMessage(data, message)
   const updatedTicket = await Ticket.findById(ticket.id)
-  expect(updatedTicket.title).toEqual(data.title)
-  expect(updatedTicket.price).toEqual(data.price)
-  expect(updatedTicket.version).toEqual(data.version)
+  expect(updatedTicket!.title).toEqual(data.title)
+  expect(updatedTicket!.price).toEqual(data.price)
+  expect(updatedTicket!.version).toEqual(data.version)
 })
 it('acks the message', async () => {
   const { listener, data, message } = await setup()

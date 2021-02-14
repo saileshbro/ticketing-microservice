@@ -35,7 +35,7 @@ test('updates the ticket, publishes an event, and acks the message', async () =>
   const { listener, ticket, data, msg } = await setup()
   await listener.onMessage(data, msg)
   const updatedTicket = await Ticket.findById(ticket.id)
-  expect(updatedTicket.orderId).not.toBeDefined()
+  expect(updatedTicket!.orderId).not.toBeDefined()
   expect(msg.ack).toHaveBeenCalled()
   expect(natsWrapper.client.publish).toHaveBeenCalled()
 
@@ -43,5 +43,5 @@ test('updates the ticket, publishes an event, and acks the message', async () =>
   const updatedTicketEventData = JSON.parse(
     jsonStr,
   ) as TicketUpdatedEvent['data']
-  expect(updatedTicket.id).toEqual(updatedTicketEventData.id)
+  expect(updatedTicket!.id).toEqual(updatedTicketEventData.id)
 })

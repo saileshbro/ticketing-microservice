@@ -30,9 +30,9 @@ it('creates and saves a ticket', async () => {
   // assert make sure ticket was created
   const ticket = await Ticket.findById(data.id)
   expect(ticket).toBeDefined()
-  expect(ticket.id).toEqual(data.id)
-  expect(ticket.title).toEqual(data.title)
-  expect(ticket.price).toEqual(data.price)
+  expect(ticket!.id).toEqual(data.id)
+  expect(ticket!.title).toEqual(data.title)
+  expect(ticket!.price).toEqual(data.price)
 })
 it('acks the message', async () => {
   const { listener, data, message } = await setup()

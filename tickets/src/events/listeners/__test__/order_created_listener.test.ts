@@ -38,7 +38,7 @@ it('sets the user id of the ticket', async () => {
   const { listener, ticket, data, msg } = await setup()
   await listener.onMessage(data, msg)
   const updatedTicket = await Ticket.findById(ticket.id)
-  expect(updatedTicket.orderId).toEqual(data.id)
+  expect(updatedTicket!.orderId).toEqual(data.id)
 })
 it('acks the message', async () => {
   const { listener, data, msg } = await setup()

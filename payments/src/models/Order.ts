@@ -58,7 +58,7 @@ orderSchema.statics.build = (attrs: OrderAttrs) => {
 }
 orderSchema.statics.findByEvent = async (
   event: OrderCancelledEvent['data'],
-): Promise<OrderDoc | undefined> => {
+): Promise<OrderDoc | null> => {
   const order = await Order.findOne({
     _id: event.id,
     version: event.version - 1,
