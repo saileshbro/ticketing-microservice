@@ -586,10 +586,18 @@
   dependencies:
     "@types/node" "*"
 
-"@types/cookie-session@^2.0.42", "@types/cookie-session@^2.0.43":
+"@types/cookie-session@^2.0.42":
   version "2.0.43"
   resolved "https://registry.yarnpkg.com/@types/cookie-session/-/cookie-session-2.0.43.tgz#dc6dda1aa2881352c27e8d048982c787aeb3a50e"
   integrity sha512-u5tPaGFbqkQagaY/xlGZA6VC/QXGxYE42p1/yQHEY3fOHoaAcNnPVe+kNRiiC2VqY5WfTjpu7Fg2U0zxKhKH+w==
+  dependencies:
+    "@types/express" "*"
+    "@types/keygrip" "*"
+
+"@types/cookie-session@^2.0.44":
+  version "2.0.44"
+  resolved "https://registry.yarnpkg.com/@types/cookie-session/-/cookie-session-2.0.44.tgz#86f3810bf19716ff716e08f877ce40cee9062267"
+  integrity sha512-3DheOZ41pql6raSIkqEPphJdhA2dX2bkS+s2Qacv8YMKkoCbAIEXbsDil7351ARzMqvfyDUGNeHGiRZveIzhqQ==
   dependencies:
     "@types/express" "*"
     "@types/keygrip" "*"
