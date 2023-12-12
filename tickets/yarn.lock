@@ -1399,10 +1399,10 @@
     "@types/express" "*"
     "@types/keygrip" "*"
 
-"@types/cookie-session@^2.0.46":
-  version "2.0.47"
-  resolved "https://registry.yarnpkg.com/@types/cookie-session/-/cookie-session-2.0.47.tgz#2e758528f5405319e0fa296ededf775165a2f09b"
-  integrity sha512-Xw+NG/nKgEcnHmecFd4X81BfzZr8+Dj+mNigYLbZ8ZNhCSowsJCzpH47EiyabGnx/lDgPNWuq1r8LUIr8yt4lg==
+"@types/cookie-session@^2.0.48":
+  version "2.0.48"
+  resolved "https://registry.yarnpkg.com/@types/cookie-session/-/cookie-session-2.0.48.tgz#d467440f7db822f5b9f2de972761f564b925e559"
+  integrity sha512-SeMTGlGVvPPcFGyAqT1kYY8FnkcZvmsURkz5DndHophxv/g3Y1nXQC556/HUDJHr6klPX1mEMP2ppQSBDfRPUA==
   dependencies:
     "@types/express" "*"
     "@types/keygrip" "*"
