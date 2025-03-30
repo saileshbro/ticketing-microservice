@@ -1295,11 +1295,6 @@ bson@^1.1.4:
   resolved "https://registry.yarnpkg.com/bson/-/bson-1.1.5.tgz#2aaae98fcdf6750c0848b0cba1ddec3c73060a34"
   integrity sha512-kDuEzldR21lHciPQAIulLs1LZlCXdLziXI6Mb/TDkwXhb//UORJNPXgcRs2CuO4H0DcMkpfT3/ySsP3unoZjBg==
 
-bson@^6.10.1:
-  version "6.10.1"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-6.10.1.tgz#dcd04703178f5ecf5b25de04edd2a95ec79385d3"
-  integrity sha512-P92xmHDQjSKPLHqFxefqMxASNq/aWJMEZugpCjf+AF/pgcUpMMQCg7t7+ewko0/u8AapvF3luf/FoehddEK+sA==
-
 bson@^6.10.3:
   version "6.10.3"
   resolved "https://registry.yarnpkg.com/bson/-/bson-6.10.3.tgz#5f9a463af6b83e264bedd08b236d1356a30eda47"
@@ -3567,23 +3562,23 @@ mongodb@3.6.2:
   optionalDependencies:
     saslprep "^1.0.0"
 
-mongodb@~6.13.0:
-  version "6.13.1"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-6.13.1.tgz#924319f957a22efda45a96d38c08a594fd7929fa"
-  integrity sha512-gdq40tX8StmhP6akMp1pPoEVv+9jTYFSrga/g23JxajPAQhH39ysZrHGzQCSd9PEOnuEQEdjIWqxO7ZSwC0w7Q==
+mongodb@~6.15.0:
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-6.15.0.tgz#4303ce0f7d5e5750749b1cb318dc7a115778f92e"
+  integrity sha512-ifBhQ0rRzHDzqp9jAQP6OwHSH7dbYIQjD3SbJs9YYk9AikKEettW/9s/tbSFDTpXcRbF+u1aLrhHxDFaYtZpFQ==
   dependencies:
     "@mongodb-js/saslprep" "^1.1.9"
     bson "^6.10.3"
     mongodb-connection-string-url "^3.0.0"
 
-mongoose@^8.10.0:
-  version "8.11.0"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.11.0.tgz#11e7f604f1febc4c11f56ec240dc740352aace7e"
-  integrity sha512-xaQSuaLk2JKmXI5zDVVWXVCQTnWhAe8MFOijMnwOuP/wucKVphd3f+ouDKivCDMGjYBDrR7dtoyV0U093xbKqA==
+mongoose@^8.12.1:
+  version "8.13.1"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.13.1.tgz#9972b50f05cc538ab5ee2b7956d0225b136d4f68"
+  integrity sha512-sRqlXI+6jhr9/KicCOjet1VVPONFsOxTrh14tfueX5y3GJ2ihswc5ewUUojuwdSS/5koGXLIPmGivDSApVXflA==
   dependencies:
-    bson "^6.10.1"
+    bson "^6.10.3"
     kareem "2.6.3"
-    mongodb "~6.13.0"
+    mongodb "~6.15.0"
     mpath "0.9.0"
     mquery "5.0.0"
     ms "2.1.3"
