@@ -2005,7 +2005,7 @@ express@^4.18.2:
     utils-merge "1.0.1"
     vary "~1.1.2"
 
-express@^4.22.0:
+express@^4.22.1:
   version "4.22.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.22.1.tgz#1de23a09745a4fffdb39247b344bb5eaff382069"
   integrity sha512-F2X8g9P1X7uCPZMA3MVf9wcTqlyNp7IhH5qPCI0izhaOIYXaW9L535tGA3qmjRzpH+bZczqq7hVKxTR4NWnu+g==
@@ -3617,10 +3617,10 @@ mongoose-update-if-current@^1.4.0:
     kareem "^2.3.0"
     regenerator-runtime "^0.13.5"
 
-mongoose@^8.19.3:
-  version "8.20.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.20.1.tgz#333e22cae375688467e57ada734279e6e6fc8b98"
-  integrity sha512-G+n3maddlqkQrP1nXxsI0q20144OSo+pe+HzRRGqaC4yK3FLYKqejqB9cbIi+SX7eoRsnG23LHGYNp8n7mWL2Q==
+mongoose@^8.20.2:
+  version "8.21.0"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.21.0.tgz#e4b940a6b22c2fc176916667766f34656e352906"
+  integrity sha512-dW2U01gN8EVQT5KAO5AkzjbqWc8A/CsEq15jOzq/M9ISpy8jw3iq7W9ZP135h9zykFOMt3AMxq4+anvt2YNJgw==
   dependencies:
     bson "^6.10.4"
     kareem "2.6.3"
