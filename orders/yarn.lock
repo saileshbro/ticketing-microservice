@@ -3622,10 +3622,10 @@ mongoose-update-if-current@^1.4.0:
     kareem "^2.3.0"
     regenerator-runtime "^0.13.5"
 
-mongoose@^8.20.1:
-  version "8.20.4"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.20.4.tgz#7eccef3e5b96e7e3a61792983d3db0ee9c8f45ee"
-  integrity sha512-o4ABeT3IEk1Z4dGt3XjHJ0x9OjyWvakC1+btPpzWqCovqyidKGdbB05/g87cdh7AuWXFQKHOxt+L/OZOBps4hw==
+mongoose@^8.21.0:
+  version "8.22.0"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.22.0.tgz#bce3fc0ce368daca0529fc4b5c94b28fcb23f590"
+  integrity sha512-LKTPPqD3CVcSZJRzPcwKiSVYTmAvBZeVT0V34vUiqPEo9sBmOEg1y4TpDbUb90Zf2lO4N05ailQnKxiapCN08g==
   dependencies:
     bson "^6.10.4"
     kareem "2.6.3"
